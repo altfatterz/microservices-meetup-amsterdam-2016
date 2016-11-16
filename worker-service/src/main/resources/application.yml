@@ -1,0 +1,16 @@
+server:
+  port: 8082
+
+spring:
+  sleuth:
+    sampler:
+      # by default 10% of requests are sampled, here we say sample all requests
+      percentage: 1.0
+  cloud:
+    stream:
+      bindings:
+        input:
+          # creates a test exchange
+          # TODO set content-type
+          # spring.cloud.stream.bindings.output.content-type is marked application/json indicating we don’t expect the consumer to use the same domain class, but instead will probably deserialize into their own POJO.
+          destination: big-operations

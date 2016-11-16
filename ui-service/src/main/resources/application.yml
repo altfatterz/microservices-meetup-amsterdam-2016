@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+spring:
+  sleuth:
+    sampler:
+      # by default 10% of requests are sampled, here we say sample all requests
+      percentage: 1.0
+
+collaborators:
+  big-operation: http://localhost:8081/big-operations

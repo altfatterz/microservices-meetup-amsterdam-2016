@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Big Operation Demo</title>
+    <!-- Bootstrap CSS, JQuery and Bootstrap Javascript -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>Big Operation calculator</h1>
+    </div>
+    <form class="form-inline" action="#" th:action="@{/tasks}" th:object="${task}" method="post">
+        <label for="task">Your task: </label>
+        <input type="text" id="task" th:field="*{content}" class="form-control" placeholder="Task"/>
+        <button type="submit" class="btn btn-success">Send</button>
+    </form>
+</div>
+</body>
+</html>
